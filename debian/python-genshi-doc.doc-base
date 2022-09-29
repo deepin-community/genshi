@@ -1,0 +1,9 @@
+Document: genshi
+Title: Genshi documentation
+Author: Edgewall Software <info@edgewall.org>
+Abstract: This documentation describes genshi usage and its API
+Section: Programming/Python
+
+Format: Text
+Index: /usr/share/doc/python-genshi-doc/txt/index.txt
+Files: /usr/share/doc/python-genshi-doc/txt/*.txt

@@ -1,0 +1,7 @@
+#doc/*.gif		usr/share/doc/python-genshi-doc/html
+#doc/*.html		usr/share/doc/python-genshi-doc/html
+#doc/*.png		usr/share/doc/python-genshi-doc/html
+doc/*.txt		usr/share/doc/python-genshi-doc/txt
+#doc/api			usr/share/doc/python-genshi-doc/html
+#doc/common/style	usr/share/doc/python-genshi-doc/html/common
+examples/*		usr/share/doc/python-genshi-doc/examples

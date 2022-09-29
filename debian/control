@@ -1,0 +1,40 @@
+Source: genshi
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Graham Inggs <ginggs@debian.org>,
+           Simon Cross <hodgestar+debian@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-six
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://genshi.edgewall.org/
+Vcs-Git: https://salsa.debian.org/python-team/packages/genshi.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/genshi
+
+Package: python3-genshi
+Architecture: all
+Depends: ${misc:Depends}, ${python3:Depends}
+Suggests: doc-base, python-genshi-doc, python3-pkg-resources
+Description: Python XML-based template engine - Python 3.x
+ Genshi  is  a Python  library  that  provides  an integrated  set  of
+ components  for  parsing,  generating,  and processing  HTML  or  XML
+ content  in  a uniform  manner.   The  major  feature is  a  template
+ language, which is heavily inspired by Kid.
+ .
+ This is the Python 3 version.
+
+Package: python-genshi-doc
+Architecture: all
+Section: doc
+Depends: libjs-jquery, ${misc:Depends}
+Description: Python XML-based template engine (documentation and examples)
+ Genshi  is  a Python  library  that  provides  an integrated  set  of
+ components  for  parsing,  generating,  and processing  HTML  or  XML
+ content  in  a uniform  manner.   The  major  feature is  a  template
+ language, which is heavily inspired by Kid.
+ .
+ This package contains documentation and example programs for Genshi.
