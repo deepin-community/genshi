@@ -1,0 +1,33 @@
+From: Graham Inggs <ginggs@debian.org>
+Date: Thu, 27 Oct 2022 12:58:29 +0200
+Subject: Fix installation with setuptools >= 60
+
+Installation of genshi with recent versions of setuptools fails with:
+`distutils.errors.DistutilsSetupError: each element of 'ext_modules' option must be an Extension instance or 2-tuple`
+Setuptools monkeypatches distutils, so change the ordering of imports so that setuptools is imported before distutils.
+---
+ setup.py | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 2be52d3..0783c70 100755
+--- a/setup.py
++++ b/setup.py
+@@ -12,8 +12,6 @@
+ # individuals. For the exact contribution history, see the revision
+ # history and logs, available at http://genshi.edgewall.org/log/.
+ 
+-from distutils.command.build_ext import build_ext
+-from distutils.errors import CCompilerError, DistutilsPlatformError
+ import os
+ try:
+     from setuptools import setup, Extension
+@@ -21,6 +19,8 @@ try:
+ except ImportError:
+     from distutils.core import setup, Extension
+     bdist_egg = None
++from distutils.command.build_ext import build_ext
++from distutils.errors import CCompilerError, DistutilsPlatformError
+ import sys
+ 
+ sys.path.append(os.path.join('doc', 'common'))
