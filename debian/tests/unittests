@@ -1,0 +1,8 @@
+#!/bin/sh
+
+set -euf
+
+for python in $(py3versions -s); do
+	echo "== $python =="
+	$python -m unittest genshi.tests.suite
+done
